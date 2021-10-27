@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  php:
+    build: .
+    container_name: php
+    restart: always
+    volumes:
+      - './src:/var/www/html'
+    ports:
+      - '80:80'
+    networks:
+      - laravel
+
+  postgres:
+    image: postgres:11-alpine
+    container_name: postgres
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./dumps:/dumps
+    ports:
+      - '5432:5432'
+    networks:
+      - laravel
+
+networks:
+  laravel:
