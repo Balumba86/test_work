@@ -38,3 +38,11 @@ dev:
 # Запускает yarn production для сборки билда
 prod:
 	docker-compose exec php yarn production
+
+# Запускает анализатор кода
+analyzer:
+	docker-compose exec php ./vendor/bin/phpcs --error-severity=1 --warning-severity=8 --standard=PSR12 app database routes
+
+# Запускает анализатор кода и выполняет фикс по стандарту PSR12
+analyser-fix:
+	docker-compose exec php ./vendor/bin/phpcs --error-severity=1 --warning-severity=8 --standard=PSR12 app database routes

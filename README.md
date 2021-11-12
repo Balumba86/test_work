@@ -31,6 +31,20 @@ make build
 
 Сайт доступен по адресу [http://localhost.ru](http://localhost.ru)
 
+## Code-style
+Придерживаемся стандарта **PSR12**
 
+Для запуска анализатора кода выполнить
 
+    make analyzer
+
+Дла запуска приведения кода к стандарту PSR12, выполнить
+
+    make analyser-fix
+
+Анализатор проверяет код в директориях
+
+    /src/app
+    /src/database
+    /src/routes
 
