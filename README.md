@@ -29,6 +29,8 @@ make build
 ## Поднятие бэкенда
 Для начала работы делаем `make up`, при завершении работы делаем `make down`.
 
+Сайт доступен по адресу [http://localhost.ru](http://localhost.ru)
+
 
 
 

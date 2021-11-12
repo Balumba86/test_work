@@ -2,3 +2,5 @@
 .env.backup
 /.idea
 /.vscode
+/data
+/dumps
