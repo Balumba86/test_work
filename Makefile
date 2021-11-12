@@ -45,4 +45,4 @@ analyzer:
 
 # Запускает анализатор кода и выполняет фикс по стандарту PSR12
 analyser-fix:
-	docker-compose exec php ./vendor/bin/phpcs --error-severity=1 --warning-severity=8 --standard=PSR12 app database routes
+	docker-compose exec php ./vendor/bin/phpcbf --error-severity=1 --warning-severity=8 --standard=PSR12 app database routes
