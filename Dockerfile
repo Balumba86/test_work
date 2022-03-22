@@ -1,4 +1,4 @@
-FROM php:8.0-fpm-alpine
+FROM php:8.1-fpm-alpine
 
 RUN apk add --no-cache autoconf g++ libmcrypt supervisor make libmcrypt-dev mosquitto-dev nginx tzdata
 
@@ -12,6 +12,8 @@ WORKDIR /var/www/html
 
 RUN apk add libpq postgresql-dev ldb-dev libldap openldap-dev && \
     docker-php-ext-install pdo pdo_pgsql pgsql ldap
+
+RUN apk add php8-dom php8-xml php8-xmlwriter php8-fileinfo php8-tokenizer
 
 RUN apk add composer
 

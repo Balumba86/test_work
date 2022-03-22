@@ -1,7 +1,7 @@
 ## Информация о сборке
 
-    PHP: 8.0.11
-    Laravel: 8.68.1
+    PHP: 8.1.4
+    Laravel: 9.5.1
 
 
 ## Важно!
@@ -29,22 +29,5 @@ make build
 ## Поднятие бэкенда
 Для начала работы делаем `make up`, при завершении работы делаем `make down`.
 
-Сайт доступен по адресу [http://localhost.ru](http://localhost.ru)
-
-## Code-style
-Придерживаемся стандарта **PSR12**
-
-Для запуска анализатора кода выполнить
-
-    make analyzer
-
-Дла запуска приведения кода к стандарту PSR12, выполнить
-
-    make analyser-fix
-
-Анализатор проверяет код в директориях
-
-    /src/app
-    /src/database
-    /src/routes
+Сайт доступен по адресу [http://localhost](http://localhost)
 
