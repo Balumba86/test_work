@@ -34,9 +34,6 @@ RUN mkdir -p /var/log/cron/
 
 ADD ./conf/php/uploads.ini /usr/local/etc/php/conf.d/
 
-### Фронт
-#RUN apk add --no-cache nodejs npm yarn
-
 EXPOSE 80
 EXPOSE 443
 
