@@ -27,5 +27,93 @@ make build
 ## Поднятие бэкенда
 Для начала работы делаем `make up`, при завершении работы делаем `make down`.
 
-Сайт доступен по адресу [http://localhost](http://localhost)
+Хост API [http://localhost/api](http://localhost/api)
+
+### Регистрация
+
+POST: `/register`
+```bash
+{
+    "name": "",
+    "email": "",
+    "password": ""
+}
+```
+Response:
+```bash
+{
+    "access_token": "",
+    "token_type": "Bearer"
+}
+```
+
+---
+
+### Создание кошелька
+
+POST: `/user/wallet/create`
+```bash
+{
+    "currency": "RUB | USD"
+}
+```
+Response:
+```bash
+{
+    "data": {
+        "user_id": 1,
+        "currency": "USD",
+        "updated_at": "2022-09-02T08:25:37.000000Z",
+        "created_at": "2022-09-02T08:25:37.000000Z",
+        "id": 2
+    }
+}
+```
+
+---
+
+### Получение баланса кошелька
+
+GET: `/user/wallet/{wallet_id}`
+
+Response:
+```bash
+{
+    "data": {
+        "balance": "0.00",
+        "currency": "USD"
+    }
+}
+```
+
+---
+
+### Изменение баланса кошелька
+
+PUT: `/user/wallet/update/{wallet_id}`
+```bash
+{
+    "currency": "RUB",
+    "operation_type": "debit",
+    "amount": 100.15,
+    "reason": "stock"
+}
+```
+Response:
+```bash
+{
+    "data": {
+        "id": 2,
+        "user_id": 1,
+        "currency": "USD",
+        "amount": "19.63",
+        "created_at": "2022-09-02T08:25:37.000000Z",
+        "updated_at": "2022-09-02T12:19:48.000000Z"
+    }
+}
+```
+
+
+
+
 
