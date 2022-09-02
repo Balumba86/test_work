@@ -29,6 +29,8 @@ make build
 
 Хост API [http://localhost/api](http://localhost/api)
 
+Headers: `Accept: application/json`
+
 ### Регистрация
 
 POST: `/register`
@@ -113,7 +115,20 @@ Response:
 }
 ```
 
+### Получение суммы операций из истории транзакций
 
+GET: `/user/wallet/history/{reason}`
 
+`{reason}` - необязательный параметр. Принимает `stock` или `refund`
 
+Response:
+```bash
+{
+    "data": {
+        "type": "result",
+        "sum": 5.15,
+        "reason": "refund"
+    }
+}
+```
 
